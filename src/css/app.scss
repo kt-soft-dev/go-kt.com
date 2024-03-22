@@ -1,0 +1,147 @@
+// app global css in Sass form
+@import 'quasar/dist/quasar';
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900';
+@import 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700';
+@import 'quasar.variables';
+
+body {
+  font-family: Inter, sans-serif;
+  white-space: nowrap;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit; /* no underline */
+}
+
+:deep(.q-btn.btn--no-hover .q-focus-helper) {
+  display: none;
+}
+
+:root {
+  --padding: 14px;
+  --width: calc(100dvw - var(--padding));
+}
+
+@media (min-width: $breakpoint-sm-min), (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  :root {
+    --padding: 46px;
+    --width: calc(100dvw - var(--padding));
+  }
+}
+
+@media (min-width: $breakpoint-md-min) and (orientation: portrait) {
+  :root {
+    --padding: 31px;
+    --width: calc(100dvw - var(--padding));
+  }
+}
+
+@media (min-width: $breakpoint-lg-min) {
+  :root {
+    --padding: calc((100dvw - var(--width)) / 2);
+    --width: 774px;
+  }
+}
+
+@media (min-width: $breakpoint-xl-min) {
+  :root {
+    --padding: calc((100dvw - var(--width)) / 2);
+    --width: 906px;
+  }
+}
+
+.site-width {
+  width: var(--width);
+}
+
+.main-container {
+  width: 100%;
+  padding: 0 var(--padding);
+}
+
+
+.screen {
+  @extend .main-container;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.screen-heading {
+  display: flex;
+
+  gap: 12px;
+  width: 332px;
+  align-items: center;
+  @media (min-width: $breakpoint-sm-min), (min-width: $breakpoint-md-min) and (orientation: landscape) {
+    gap: 10px;
+    width: auto;
+  }
+  @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
+    gap: 18px;
+    width: auto;
+  }
+  @media (min-width: $breakpoint-lg-min) {
+    gap: 18px;
+    width: auto;
+  }
+  @media (min-width: $breakpoint-xl-min) {
+    gap: 20px;
+    width: auto;
+  }
+}
+
+.screen-heading .screen-heading-icon {
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+  @media (min-width: $breakpoint-sm-min), (min-width: $breakpoint-md-min) and (orientation: landscape) {
+    width: 28px;
+    height: 28px;
+  }
+  @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
+    width: 48px;
+    height: 48px;
+  }
+  @media (min-width: $breakpoint-lg-min) {
+    width: 48px;
+    height: 48px;
+  }
+  @media (min-width: $breakpoint-xl-min) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.screen-heading .screen-title {
+  color: #302c3a;
+  font-style: normal;
+  font-weight: 700;
+
+  font-size: 26px;
+  line-height: 32px; /* 123.077% */
+  letter-spacing: -0.52px;
+  @media (min-width: $breakpoint-sm-min), (min-width: $breakpoint-md-min) and (orientation: landscape) {
+    font-size: 22px;
+    line-height: 28px; /* 127.273% */
+    letter-spacing: -0.44px;
+  }
+  @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
+    font-size: 38px;
+    line-height: 44px; /* 115.789% */
+    letter-spacing: -0.76px;
+  }
+  @media (min-width: $breakpoint-lg-min) {
+    font-size: 38px;
+    line-height: 44px; /* 115.789% */
+    letter-spacing: -0.76px;
+  }
+  @media (min-width: $breakpoint-xl-min) {
+    font-size: 40px;
+    line-height: 46px; /* 115% */
+    letter-spacing: -0.8px;
+  }
+}

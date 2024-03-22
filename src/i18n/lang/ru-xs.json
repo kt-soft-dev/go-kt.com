@@ -1,0 +1,70 @@
+{
+  "header": {
+    "company-name": "ktCloud",
+    "registration": "Регистрация",
+    "support": "Поддержка"
+  },
+  "main-screen": {
+    "header": "Шифруйте файлы<br>и держите<br>их в надёжном<br>облачном хранилище",
+    "sub-header": "Защите свои данные<br>с помощью нашего сервиса.<br>Попробуйте без регистрации."
+  },
+  "uploader": {
+    "button": "Загрузить",
+    "drop-message": "Нажмите, чтобы выбрать файл<br/>или перетащите сюда",
+    "drop-hint": "один любой формат до 100 МБ",
+    "mb": "МБ",
+    "file-chosen": "файл выбран",
+    "encrypt": "Зашифровать",
+    "file-error": "файл не должен превышать 100 МБ",
+    "upload": "Загрузить",
+    "encrypt-password-placeholder": "введите пароль",
+    "file-loading-caption": "файл загружается...",
+    "file-is-big-caption": "файл не должен превышать 100 МБ",
+    "file-chosen-caption": "файл выбран",
+    "upload-button-loading": "Файл загружается...",
+    "upload-button": "Загрузить",
+    "open-button": "Открыть файл",
+    "file-unknown-error-caption": "неизвестная ошибка",
+    "too-many-files": "Не более 1 файла"
+  },
+  "features-screen": {
+    "header": "Что еще предлагает<br>ktCloud",
+    "encryption": {
+      "title": "P2P-шифрование по умолчанию",
+      "description": "В отличие от многих других сервисов,<br>даже мы не сможем видеть ваши файлы,<br>это технически исключено."
+    },
+    "online": {
+      "title": "Открытие и редактирование<br>файлов онлайн",
+      "description": "Создавайте документы и делитесь<br>ими, не нарушая приватность.<br><span style=\"font-weight: 600\">Все зашифровано.</span>"
+    },
+    "security": {
+      "title": "Хранение чувствительных данных",
+      "description": "Менеджер паролей и одноразовые<br>заметки позволят передавать даже самые<br>секретные данные, которые не стоит<br>видеть самому сервису."
+    },
+    "inexpensive": {
+      "title": "Низкие цены и бесплатный доступ",
+      "description": "На период тестирования мы выдаём<br>бесплатный доступ. Расширенную версию<br>можно оплатить любой картой<br>или криптовалютой."
+    }
+  },
+  "terminal-screen": {
+    "header": "Консольная утилита",
+    "terminal": {
+      "header": "ktCloud — -zsh — 80x24",
+      "body": "<span style=\"font-weight: 700\">ktCloud %</span> Консольная утилита в процессе разработки<br><span style=\"font-weight: 700\">ktCloud %</span> Следить можно здесь:<br><a href=\"{link}\">{link}</a><br>",
+      "go-to-github": "Открыть на GitHub"
+    }
+  },
+  "beta-access-screen": {
+    "header": "Нужно больше<br>и удобнее?",
+    "sub-header": "Примите участие в закрытом<br>тестировании <span style=\"font-weight: 600\">ktCloud.</span><br>После регистрации вы получите:",
+    "full-access-list": {
+      "first": "Доступ ко всем функциям<br>сервиса",
+      "second": "Снятие ограничений<br>на размер файлов",
+      "third": "Возможность бессрочно<br>хранить личные файлы"
+    },
+    "register-button": "Зарегистрироваться"
+  },
+  "footer": {
+    "copyright": "© ktSoftware, 2019-2024"
+  }
+}
