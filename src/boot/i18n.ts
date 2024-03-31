@@ -1,35 +1,33 @@
-import { boot } from 'quasar/wrappers';
+import { boot } from 'quasar/wrappers'
+import { createI18n } from 'vue-i18n'
 
-import messages from 'src/i18n';
-import { adaptiveValue } from 'src/utils';
-import { createI18n } from 'vue-i18n';
+import messages from 'src/i18n'
 
-export type MessageLanguages = keyof typeof messages;
-export type MessageSchema = (typeof messages)['ruXs'];
+export type MessageLanguages = keyof typeof messages
+// Type-define 'en-US' as the master schema for the resource
+export type MessageSchema = (typeof messages)['en-US']
 
 // See https://vue-i18n.intlify.dev/guide/advanced/typescript.html#global-resource-schema-type-definition
 /* eslint-disable @typescript-eslint/no-empty-interface */
 declare module 'vue-i18n' {
-  // noinspection JSUnusedGlobalSymbols
-  export interface DefineLocaleMessage extends MessageSchema {}
+    // define the locale messages schema
+    export interface DefineLocaleMessage extends MessageSchema {}
 
-  // noinspection JSUnusedGlobalSymbols
-  export interface DefineDateTimeFormat {}
+    // define the datetime format schema
+    export interface DefineDateTimeFormat {}
 
-  // noinspection JSUnusedGlobalSymbols
-  export interface DefineNumberFormat {}
+    // define the number format schema
+    export interface DefineNumberFormat {}
 }
-
-export function getAdaptiveLocale(): MessageLanguages {
-  // TODO
-  return adaptiveValue('ruXs', 'ruSm', 'ruMd', 'ruLg', 'ruXl');
-}
+/* eslint-enable @typescript-eslint/no-empty-interface */
 
 export default boot(({ app }) => {
-  const i18n = createI18n({
-    locale: getAdaptiveLocale(),
-    legacy: false,
-    messages,
-  });
-  app.use(i18n);
-});
+    const i18n = createI18n({
+        locale: 'en-US',
+        legacy: false,
+        messages,
+    })
+
+    // Set i18n instance on app
+    app.use(i18n)
+})

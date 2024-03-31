@@ -1,36 +1,55 @@
 {
-  "name": "ktcloud-landing",
-  "version": "3.1",
-  "license": "gpl-v3",
-  "description": "ktCloud Landing",
-  "productName": "ktCloud Landing",
-  "author": "zemf4you <zemf4you@gmail.com>",
-  "private": true,
-  "scripts": {
-    "dev": "quasar dev",
-    "build": "quasar build",
-    "vue-i18n-extract": "vue-i18n-extract"
-  },
-  "dependencies": {
-    "@quasar/extras": "^1.16.4",
-    "axios": "^1.2.1",
-    "openpgp": "^5.11.1",
-    "quasar": "^2.6.0",
-    "vue": "^3.0.0",
-    "vue-i18n": "^9.2.2"
-  },
-  "devDependencies": {
-    "@intlify/vite-plugin-vue-i18n": "^3.3.1",
-    "@quasar/app-vite": "^1.3.0",
-    "@types/node": "^12.20.21",
-    "@typescript-eslint/eslint-plugin": "^5.10.0",
-    "@typescript-eslint/parser": "^5.10.0",
-    "autoprefixer": "^10.4.2",
-    "eslint": "^8.10.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-vue": "^9.0.0",
-    "prettier": "^2.5.1",
-    "typescript": "^4.5.4",
-    "vue-i18n-extract": "^2.0.7"
-  }
+    "name": "kt-uploader-landing",
+    "version": "0.0.1",
+    "description": "just simple landing",
+    "productName": "ktCloud",
+    "contributors": [
+        {
+            "name": "zemf4you",
+            "email": "zemf4you@gmail.com"
+        },
+        {
+            "name": "Borys Stelmakh",
+            "email": "mikechip@pm.me"
+        }
+    ],
+    "private": true,
+    "scripts": {
+        "lint": "eslint --ext .js,.ts,.vue ./",
+        "dev": "quasar dev",
+        "build": "quasar build"
+    },
+    "dependencies": {
+        "@quasar/extras": "^1.0.0",
+        "openpgp": "^5.9.0",
+        "quasar": "^2.6.0",
+        "vue": "^3.0.0",
+        "vue-i18n": "^9.2.2",
+        "vue-router": "^4.0.0"
+    },
+    "devDependencies": {
+        "@intlify/vite-plugin-vue-i18n": "^3.3.1",
+        "@quasar/app-vite": "^1.0.0",
+        "@types/node": "^12.20.21",
+        "@typescript-eslint/eslint-plugin": "^5.10.0",
+        "@typescript-eslint/parser": "^5.10.0",
+        "autoprefixer": "^10.4.2",
+        "dotenv": "^16.3.1",
+        "eslint": "^8.10.0",
+        "eslint-config-prettier": "^8.1.0",
+        "eslint-plugin-vue": "^9.0.0",
+        "typescript": "^4.5.4",
+        "workbox-build": "^6.5.4",
+        "workbox-cacheable-response": "^6.5.4",
+        "workbox-core": "^6.5.4",
+        "workbox-expiration": "^6.5.4",
+        "workbox-precaching": "^6.5.4",
+        "workbox-routing": "^6.5.4",
+        "workbox-strategies": "^6.5.4"
+    },
+    "engines": {
+        "node": "^18 || ^16 || ^14.19",
+        "npm": ">= 6.13.4",
+        "yarn": ">= 1.21.1"
+    }
 }
