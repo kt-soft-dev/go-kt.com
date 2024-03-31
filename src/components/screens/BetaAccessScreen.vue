@@ -17,6 +17,8 @@
     </div>
 
     <q-btn
+      :href="cloud"
+      target="_blank"
       :padding="
         adaptiveValue(
           '12px 30px',
@@ -38,6 +40,9 @@
 <script lang="ts" setup>
 import TiltedBadge from 'components/TiltedBadge.vue';
 import { adaptiveValue } from 'src/utils';
+import { config } from 'src/config';
+
+const cloud = config.cloudURL;
 </script>
 
 <style lang="scss" scoped>
@@ -52,7 +57,7 @@ import { adaptiveValue } from 'src/utils';
   padding-top: 50px;
   padding-bottom: 80px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     padding-top: 40px;
     padding-bottom: 70px;
   }
@@ -86,7 +91,7 @@ import { adaptiveValue } from 'src/utils';
   line-height: 24px; /* 133.333% */
   letter-spacing: -0.36px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     margin-top: 10px;
     font-size: 14px;
     line-height: 20px; /* 142.857% */
@@ -124,7 +129,7 @@ import { adaptiveValue } from 'src/utils';
   padding: 26px 26px 34px;
   margin-top: 30px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     border-radius: 17px;
     width: 388px;
     height: 116px;
@@ -163,7 +168,7 @@ ul.features-list {
 
   gap: 16px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     gap: 12px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -184,7 +189,7 @@ ul.features-list li {
 
   gap: 16px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     gap: 12px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -205,7 +210,7 @@ ul.features-list li::before {
   width: 18px;
   height: 18px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     width: 16px;
     height: 16px;
   }
@@ -232,7 +237,7 @@ ul.features-list li {
   font-size: 16px;
   letter-spacing: -0.32px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 13px;
     letter-spacing: -0.26px;
   }
@@ -267,7 +272,7 @@ ul.features-list li {
   width: 240px;
   height: auto;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     border-radius: 12px;
     font-size: 13px;
     letter-spacing: -0.26px;
@@ -308,7 +313,7 @@ ul.features-list li {
   height: auto;
   padding: 6px 14.212px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     width: auto;
     height: auto;
     padding: 6px 14.212px;
@@ -331,7 +336,7 @@ ul.features-list li {
 
   transform: rotate(4deg) translate(5.29px, -50%);
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     transform: rotate(4deg) translate(7.37px, calc(-50% + 1.5px));
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {

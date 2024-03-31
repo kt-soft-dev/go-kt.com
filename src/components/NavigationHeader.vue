@@ -11,15 +11,19 @@
         <div class="company-name" v-html="$t('header.company-name')" />
       </div>
       <nav class="nav">
-        <a class="nav-link" href="#" v-html="$t('header.registration')" />
-        <a class="nav-link" href="#" v-html="$t('header.support')" />
+        <a class="nav-link" :href="cloud" v-html="$t('header.registration')" />
+        <a class="nav-link" :href="support" v-html="$t('header.support')" />
       </nav>
     </div>
   </header>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { config } from 'src/config';
 
+const cloud = config.cloudURL;
+const support = config.supportURL;
+</script>
 <style lang="scss" scoped>
 @import '/src/css/app';
 
@@ -38,7 +42,7 @@
   padding-left: 1px;
   padding-right: 1px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     height: 38px;
     padding-left: 1px;
     padding-right: 1px;
@@ -65,7 +69,7 @@
 
   gap: 6px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     gap: 8px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -84,7 +88,7 @@
   height: 20px;
   margin-top: 24px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     width: 17.398px;
     height: 16px;
     margin-top: 13px;
@@ -118,7 +122,7 @@
   font-size: 16px;
   letter-spacing: -0.32px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     margin-top: 14px;
     font-size: 12px;
     letter-spacing: -0.24px;
@@ -150,7 +154,7 @@ $navLinkPadding: 5px;
   margin-top: 27px - $navLinkPadding;
   gap: 20px - 2 * $navLinkPadding;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     margin-top: 16px - $navLinkPadding;
     gap: 14px - 2 * $navLinkPadding;
   }
@@ -181,7 +185,7 @@ $navLinkPadding: 5px;
   font-size: 12px;
   letter-spacing: -0.24px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 9px;
     letter-spacing: -0.18px;
   }
