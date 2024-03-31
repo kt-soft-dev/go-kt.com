@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, defineProps } from 'vue';
+import { computed } from 'vue';
 
 // Define props with types
 const props = defineProps({
@@ -13,7 +13,7 @@ const props = defineProps({
   color: { type: String, required: true },
   trackColor: { type: String, required: true },
   size: { type: String, required: true },
-  animationSpeed: { type: String, required: true },
+  animationSpeed: { type: String, required: true }
 });
 
 // Compute width based on value
@@ -25,13 +25,13 @@ const progressBarStyle = computed(() => ({
   backgroundColor: props.color,
   height: props.size,
   borderRadius: props.size,
-  transition: `width ${props.animationSpeed}ms linear`,
+  transition: `width ${props.animationSpeed}ms linear`
 }));
 
 const trackStyle = computed(() => ({
   backgroundColor: props.trackColor,
   height: props.size,
-  borderRadius: props.size,
+  borderRadius: props.size
 }));
 </script>
 

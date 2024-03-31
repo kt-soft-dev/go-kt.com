@@ -8,7 +8,6 @@
       class="encrypt-password-input"
       @input="(event: InputEvent) => emit('update:modelValue', (event.target as HTMLInputElement).value)"
     />
-    <!-- TODO: make it button -->
     <img
       :draggable="false"
       :src="isVisible ? '/static/hide.svg' : '/static/show.svg'"
@@ -27,7 +26,7 @@ export interface EncryptPasswordField {
 }
 
 withDefaults(defineProps<EncryptPasswordField>(), {
-  modelValue: '',
+  modelValue: ''
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -50,7 +49,7 @@ const isVisible = ref(false);
   padding: 12px 10px;
   border-radius: 14px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     height: auto;
     padding: 11px 10px;
     border-radius: 13px;
@@ -86,7 +85,7 @@ const isVisible = ref(false);
   font-size: 14px;
   letter-spacing: -0.28px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 11px;
     letter-spacing: -0.22px;
   }
@@ -126,7 +125,7 @@ const isVisible = ref(false);
   width: 16px;
   height: 16px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     width: 16px;
     height: 16px;
   }

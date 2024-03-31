@@ -1,10 +1,4 @@
 <template>
-  <!-- FIXME: DRAFT! Decompose and simplify -->
-  <!--  1. Decompose by components -->
-  <!--  *You are here* -->
-  <!--  2. Split by views -->
-  <!--  3. Properly share responsibilities -->
-  <!--  4. Final review -->
   <div class="uploader">
     <UploadedFile
       v-if="cloudFile"
@@ -29,6 +23,7 @@
             :caption="$t('uploader.file-loading-caption')"
             :file="file"
             @reset="reset"
+            :error="false"
           />
           <ProgressBar
             :value="progress / 100"
@@ -132,7 +127,8 @@ const file = ref<File>();
 const cloudFile = ref<CloudFile>();
 
 const isFileBig = computed(() => (file.value?.size ?? 0) > 100 * 1024 * 1024);
-const error = computed(() => isFileBig.value);
+const uploadFailed = ref(false);
+const error = computed(() => isFileBig.value || uploadFailed.value);
 
 const encryptIntent = ref(false);
 const encrypt = computed(() => encryptIntent.value && !error.value);
@@ -147,13 +143,17 @@ function reset() {
 
 async function handleUploading() {
   if (!file.value) return;
-  cloudFile.value = await uploader.upload(
-    file.value,
-    encrypt.value ? encryptPassword.value : undefined,
-    (percent) => {
-      progress.value = percent;
-    }
-  );
+  try {
+    cloudFile.value = await uploader.upload(
+      file.value,
+      encrypt.value ? encryptPassword.value : undefined,
+      (percent) => {
+        progress.value = percent;
+      }
+    );
+  } catch (e) {
+    uploadFailed.value = true;
+  }
   reset();
 }
 
@@ -180,7 +180,7 @@ async function handleCloudFileDeleting() {
   width: 332px;
   gap: 20px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     width: 388px;
     gap: 18px;
   }
@@ -210,7 +210,7 @@ async function handleCloudFileDeleting() {
   // FIXME: check
   padding: 21.5px 20px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     padding: 20.5px 30px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -228,7 +228,7 @@ async function handleCloudFileDeleting() {
   justify-content: center;
   gap: 10px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     gap: 8px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -256,7 +256,7 @@ async function handleCloudFileDeleting() {
   font-size: 14px;
   letter-spacing: -0.28px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 11px;
     letter-spacing: -0.22px;
   }
@@ -283,7 +283,7 @@ async function handleCloudFileDeleting() {
   font-size: 12px;
   letter-spacing: -0.24px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 9px;
     letter-spacing: -0.18px;
   }
@@ -307,7 +307,7 @@ async function handleCloudFileDeleting() {
 
   gap: 14px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     gap: 14px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -340,7 +340,7 @@ async function handleCloudFileDeleting() {
   width: 240px;
   height: auto;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 13px;
     letter-spacing: -0.26px;
     border-radius: 12px;
@@ -380,7 +380,7 @@ async function handleCloudFileDeleting() {
   width: 276px;
   margin-bottom: 14.5px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     width: 191px;
     margin-bottom: 12.5px;
   }

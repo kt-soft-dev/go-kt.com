@@ -8,7 +8,6 @@
           {{ $t('uploader.mb') }}
         </div>
       </div>
-      <!-- TODO: make it button -->
       <img
         :draggable="false"
         :src="error ? '/static/cancel.svg' : '/static/close_solid.svg'"
@@ -18,7 +17,6 @@
       />
     </div>
     <div
-      :class="{ error: error }"
       class="file-header-caption"
       v-html="caption"
     />
@@ -33,7 +31,7 @@ export interface FileHeaderProps {
 }
 
 withDefaults(defineProps<FileHeaderProps>(), {
-  error: false,
+  error: false
 });
 
 defineEmits(['reset']);
@@ -51,7 +49,7 @@ defineEmits(['reset']);
 
   gap: 6px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     gap: 6px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -73,7 +71,7 @@ defineEmits(['reset']);
 
   gap: 4px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     gap: 4px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -94,7 +92,7 @@ defineEmits(['reset']);
 
   gap: 8px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     gap: 8px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -120,7 +118,7 @@ defineEmits(['reset']);
   font-size: 14px;
   letter-spacing: -0.28px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 11px;
     letter-spacing: -0.22px;
   }
@@ -147,7 +145,7 @@ defineEmits(['reset']);
   font-size: 14px;
   letter-spacing: -0.28px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 11px;
     letter-spacing: -0.22px;
   }
@@ -172,7 +170,7 @@ defineEmits(['reset']);
   width: 18px;
   height: 18px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     width: 16px;
     height: 16px;
   }
@@ -204,7 +202,7 @@ defineEmits(['reset']);
   font-size: 12px;
   letter-spacing: -0.24px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 9px;
     letter-spacing: -0.18px;
   }

@@ -10,7 +10,6 @@
     <div class="file-info">
       <div class="file-name">{{ modelValue.name }}</div>
       <div class="controls">
-        <!-- TODO: make it button -->
         <img
           :draggable="false"
           alt="Delete uploaded file button"
@@ -18,7 +17,6 @@
           src="/static/delete.svg"
           @click.stop="$emit('delete')"
         />
-        <!-- TODO: make it button -->
         <img
           :draggable="false"
           alt="Copy uploaded file url"
@@ -60,7 +58,7 @@ defineEmits(['delete']);
   height: 130px;
   padding: 22px 20px 29px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     border-radius: 20px;
     height: 120px;
     padding: 22px 22px 28px;
@@ -90,7 +88,7 @@ defineEmits(['delete']);
 
   padding-bottom: 10px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     padding-bottom: 8px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -114,7 +112,7 @@ defineEmits(['delete']);
   font-size: 14px;
   letter-spacing: -0.28px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 11px;
     letter-spacing: -0.22px;
   }
@@ -154,7 +152,7 @@ defineEmits(['delete']);
   font-size: 16px;
   letter-spacing: -0.32px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 13px;
     letter-spacing: -0.26px;
   }
@@ -177,7 +175,7 @@ defineEmits(['delete']);
 
   gap: 10px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     gap: 8px;
   }
   @media (min-width: $breakpoint-md-min) and (orientation: portrait) {
@@ -199,7 +197,7 @@ defineEmits(['delete']);
   width: 18px;
   height: 18px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     width: 16px;
     height: 16px;
   }
@@ -226,7 +224,7 @@ defineEmits(['delete']);
   font-size: 14px;
   letter-spacing: -0.28px;
   @media (min-width: $breakpoint-sm-min),
-    (min-width: $breakpoint-md-min) and (orientation: landscape) {
+  (min-width: $breakpoint-md-min) and (orientation: landscape) {
     font-size: 11px;
     letter-spacing: -0.22px;
   }
