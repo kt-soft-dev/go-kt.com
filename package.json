@@ -2,8 +2,8 @@
   "name": "ktcloud-landing",
   "version": "3.1",
   "license": "gpl-v3",
-  "description": "ktCloud Landing",
-  "productName": "ktCloud Landing",
+  "description": "ktCloud",
+  "productName": "ktCloud",
   "author": "zemf4you <zemf4you@gmail.com>",
   "private": true,
   "scripts": {
